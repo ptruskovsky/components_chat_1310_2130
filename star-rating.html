@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="./star-rating.css">
+        <script src="./star-rating.js"></script>
+    </head>
+    <body>
+        <div class="js-app"></div>
+        <script>
+            'use strict';
+            let starRating = new StarRating({
+                el: document.createElement('div'),
+                data: {
+                    value: 0
+                }
+            });
+
+            starRating.render();
+            document.querySelector('.js-app').append(starRating.el);
+        </script>
+    </body>
+</html>
