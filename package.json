@@ -1,0 +1,25 @@
+{
+  "name": "components_chat_1310_2130",
+  "version": "1.0.0",
+  "description": "Учебный чатик",
+  "main": ".eslintrc.js",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^4.12.1",
+    "eslint-config-google": "^0.9.1"
+  },
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint components/**/*.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iketari/components_chat_1310_2130.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iketari/components_chat_1310_2130/issues"
+  },
+  "homepage": "https://github.com/iketari/components_chat_1310_2130#readme"
+}

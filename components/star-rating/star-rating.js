@@ -1,4 +1,4 @@
-(function () {
+(function() {
     'use strict';
 
     const STARS_AMOUNT = 10;
@@ -12,7 +12,7 @@
             this._initEvents();
         }
 
-        render () {
+        render() {
             this.el = this._getHtml();
         }
 
@@ -21,19 +21,19 @@
         }
 
         _initEvents() {
-            Object.keys(this.events).forEach(eventName => {
+            Object.keys(this.events).forEach((eventName) => {
                 this.el.addEventListener(eventName, this[this.events[eventName]].bind(this));
             });
         }
 
-        _getHtml () {
+        _getHtml() {
             throw new Error('Метод _getHtml должен быть переопределен!');
         }
     }
 
     class StarRatingClass extends Widget {
-        constructor({ el, data = { value: 1 } }) {
-            super({ el, data }); // Widget.apply(this);
+        constructor({el, data = {value: 1}}) {
+            super({el, data}); // Widget.apply(this);
             this.firstRender = true;
 
             this.events = {
@@ -43,8 +43,8 @@
             this._initEvents();
         }
 
-        render () {
-            console.time('renderStars')
+        render() {
+            console.time('renderStars');
             if (this.firstRender) {
                 this.renderStars();
             }
@@ -65,10 +65,9 @@
                 this.el.querySelector('.js-feedback-range').textContent = this.data.value;
                 console.timeEnd('DOMrender');
             }
-
         }
 
-        renderStars () {
+        renderStars() {
             this.el.innerHTML = `
                 <div class="star-rating">
                     <div class="star-rating__wrap">
@@ -81,7 +80,7 @@
             this.firstRender = false;
         }
 
-        onChange (event) {
+        onChange(event) {
             console.log(event);
             let {value} = event.target;
             this.setData({value});
