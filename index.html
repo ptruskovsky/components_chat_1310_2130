@@ -1,23 +1,16 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="./components/star-rating/star-rating.css">
+        <script type="module" src="./components/app/app.js"></script>
     </head>
     <body>
-        <h1>Новый HTML</h1>
         <div class="js-app"></div>
-        <script src="./components/star-rating/star-rating.js"></script>
-        <script>
-            'use strict';
-            let starRating = new StarRating({
-                el: document.createElement('div'),
-                data: {
-                    value: 0
-                }
+        <script type="module">
+            import { App } from "./components/app/app.js";
+            
+            new App({
+                el: document.querySelector('.js-app')
             });
-
-            starRating.render();
-            document.querySelector('.js-app').append(starRating.el);
         </script>
     </body>
 </html>
