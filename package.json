@@ -1,0 +1,25 @@
+{
+    "name": "components_chat_1310_2130",
+    "version": "1.0.0",
+    "description": "Учебный чатик",
+    "main": "index.js",
+    "dependencies": {},
+    "devDependencies": {
+        "eslint": "^4.12.1",
+        "static-server": "^3.0.0"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "./node_modules/.bin/static-server"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ptruskovsky/components_chat_1310_2130.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/ptruskovsky/components_chat_1310_2130/issues"
+    },
+    "homepage": "https://github.com/ptruskovsky/components_chat_1310_2130#readme"
+}
