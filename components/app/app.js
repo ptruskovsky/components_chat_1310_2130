@@ -13,18 +13,16 @@ export class App {
         });
 
         this.el.append(this.chat.el, this.form.el);
-        this.chat.setData({
-            messages: [
-                {
-                    sender: 'Ekaterina',
-                    text: 'тогда и класс надо менять'
-                },
-                {
-                    sender: 'Ivan',
-                    text: 'закрывающий div'
-                }
-            ]
-        });
+        this.chat.add([
+            {
+                name: 'Ekaterina',
+                text: 'тогда и класс надо менять'
+            },
+            {
+                name: 'Ivan',
+                text: 'закрывающий div'
+            }
+        ]);
 
         this.render();
     }
@@ -35,14 +33,9 @@ export class App {
     }
 
     _onFormSubmit({text}) {
-        this.chat.setData({
-            messages: [
-                ...this.chat.data.messages,
-                {
-                    text,
-                    sender: 'Me'
-                }
-            ]
+        this.chat.addOne({
+            text,
+            name: 'Me'
         });
         this.render();
     }

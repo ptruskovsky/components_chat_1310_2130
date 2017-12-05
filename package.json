@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Учебный чатик",
   "main": ".eslintrc.js",
-  "dependencies": {},
+  "dependencies": {
+    "milligram": "^1.3.0"
+  },
   "devDependencies": {
     "eslint": "^4.12.1",
     "eslint-config-google": "^0.9.1",
