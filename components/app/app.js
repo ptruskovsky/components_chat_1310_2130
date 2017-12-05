@@ -1,11 +1,18 @@
 import {Chat} from './../chat/chat.js';
 import {Form} from './../form/form.js';
 
+const USER_NAME = 'Artsiom';
+
+
 export class App {
     constructor({el}) {
         this.el = el;
         this.chat = new Chat({
-            el: document.createElement('div')
+            el: document.createElement('div'),
+            data: {
+                messages: [],
+                user: USER_NAME
+            }
         });
         this.form = new Form({
             el: document.createElement('div'),
@@ -35,7 +42,7 @@ export class App {
     _onFormSubmit({text}) {
         this.chat.addOne({
             text,
-            name: 'Me'
+            name: USER_NAME
         });
         this.render();
     }

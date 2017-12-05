@@ -9,11 +9,14 @@
   "devDependencies": {
     "eslint": "^4.12.1",
     "eslint-config-google": "^0.9.1",
+    "pug": "^2.0.0-rc.4",
+    "pug-cli": "^1.0.0-alpha6",
     "static-server": "^3.0.0"
   },
   "scripts": {
     "start": "./node_modules/.bin/static-server .",
     "lint": "./node_modules/.bin/eslint components/**/*.js",
+    "pug": "./node_modules/.bin/pug -c --name-after-file --extension pug.js  components/**/*.pug",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
