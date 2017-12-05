@@ -1,3 +1,5 @@
+import {avatarService} from '../../modules/avatar.service.js';
+
 export class Chat {
     constructor({el, data = {messages: []}}) {
         this.el = el;
@@ -71,6 +73,7 @@ export class Chat {
         return {
             name,
             isMine: name === this.data.user,
+            avatar: avatarService.getByName(name),
             text,
             date: new Date(date),
             html
