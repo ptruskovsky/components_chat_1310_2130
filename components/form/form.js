@@ -1,5 +1,5 @@
 export class Form {
-    constructor({ el, onSubmit }) {
+    constructor({el, onSubmit}) {
         this.el = el;
 
         this.el.addEventListener('submit', this._onSubmit.bind(this));
