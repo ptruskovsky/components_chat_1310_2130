@@ -1,17 +1,19 @@
-import {Chat} from './../chat/chat.js';
-import {Form} from './../form/form.js';
-
-const USER_NAME = 'Artsiom';
-
+import { Chat } from './../chat/chat.js';
+import { Form } from './../form/form.js';
+import { settingsKeeperService } from '../../modules/settings-keeper.service.js';
 
 export class App {
-    constructor({el}) {
+    constructor({ el }) {
+
+        this.settingsKeeper = settingsKeeperService;
+        this.settingsKeeper.setSetting('userName', 'Pavel');
+
         this.el = el;
         this.chat = new Chat({
             el: document.createElement('div'),
             data: {
                 messages: [],
-                user: USER_NAME
+                user: this.settingsKeeper.getSetting('userName')
             }
         });
         this.form = new Form({
@@ -20,8 +22,7 @@ export class App {
         });
 
         this.el.append(this.chat.el, this.form.el);
-        this.chat.add([
-            {
+        this.chat.add([{
                 name: 'Ekaterina',
                 text: 'тогда и класс надо менять'
             },
@@ -39,10 +40,10 @@ export class App {
         this.form.render();
     }
 
-    _onFormSubmit({text}) {
+    _onFormSubmit({ text }) {
         this.chat.addOne({
             text,
-            name: USER_NAME
+            name: this.settingsKeeper.getSetting('userName')
         });
         this.render();
     }
